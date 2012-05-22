@@ -30,6 +30,8 @@
 
 - (void) drawRect:(CGRect)rect
 {		
+  if (self.badgeString == nil) return;
+
     CGFloat fontsize = 11;
     
 	CGSize numberSize = [self.badgeString sizeWithFont:[UIFont boldSystemFontOfSize: fontsize]];
@@ -221,6 +223,7 @@
 	}
 	else
 	{
+    [self.badge setBadgeString:nil];
 		[self.badge setHidden:YES];
 	}
 	
